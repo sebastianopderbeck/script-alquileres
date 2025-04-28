@@ -3,15 +3,17 @@ import cors from 'cors';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import fs from 'fs/promises';
+import path from 'path';
 
 const execAsync = promisify(exec);
 const app = express();
-const port = 3002;
+const DEFAULT_PORT = 3002;
 
-// Configurar CORS para permitir solicitudes desde el frontend
+// Configurar CORS para permitir todas las solicitudes durante el desarrollo
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
-  methods: ['GET', 'POST'],
+  origin: '*',  // Permitir todos los orígenes
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 
@@ -23,43 +25,107 @@ app.use((req, res, next) => {
   next();
 });
 
-// Endpoint to run all scripts and get results
-app.get('/api/results', async (req, res) => {
-  try {
-    console.log('Running scripts...');
-    
-    // Run the scripts
-    await execAsync('node scriptArgenProp.js');
-    await execAsync('node scriptZonaProp.js');
+// Función para ejecutar un script de Python
+async function runPythonScript(scriptName) {
+    try {
+        console.log(`Ejecutando script ${scriptName}...`);
+        const { stdout, stderr } = await execAsync(`python ${scriptName}`);
+        if (stderr) console.error(`Error en ${scriptName}:`, stderr);
+        console.log(`Script ${scriptName} completado`);
+        return true;
+    } catch (error) {
+        console.error(`Error ejecutando ${scriptName}:`, error);
+        return false;
+    }
+}
 
-    console.log('Scripts executed successfully');
+// Función para leer los resultados de ArgenProp
+async function readArgenPropResults() {
+    try {
+        const data = await fs.readFile('argenPropResults.json', 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Error leyendo argenPropResults.json:', error);
+        return [];
+    }
+}
 
-    // Read the results files
-    const argenPropData = await fs.readFile('./argenPropResults.js', 'utf8');
-    const zonaPropData = await fs.readFile('./zonaPropResults.js', 'utf8');
+// Función para leer los resultados de ZonaProp
+async function readZonaPropResults() {
+    try {
+        const data = await fs.readFile('zonaPropResults.json', 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Error leyendo zonaPropResults.json:', error);
+        return [];
+    }
+}
 
-    const argenPropResults = JSON.parse(argenPropData);
-    const zonaPropResults = JSON.parse(zonaPropData);
+// Endpoint para buscar propiedades
+app.post('/api/search', async (req, res) => {
+    try {
+        console.log('Iniciando búsqueda de propiedades...');
+        
+        // Ejecutar ambos scripts de Python en paralelo
+        const [argenPropSuccess, zonaPropSuccess] = await Promise.all([
+            runPythonScript('scriptArgenProp.py'),
+            runPythonScript('scriptZonaProp.py')
+        ]);
 
-    console.log('Results loaded:', {
-      argenProp: argenPropResults.length || 0,
-      zonaProp: zonaPropResults.length || 0
-    });
+        if (!argenPropSuccess && !zonaPropSuccess) {
+            throw new Error('Error al ejecutar los scripts de búsqueda');
+        }
 
-    // Combine and format results
-    const results = {
-      argenProp: argenPropResults || [],
-      zonaProp: zonaPropResults || []
-    };
+        // Leer los resultados actualizados
+        const [argenPropResults, zonaPropResults] = await Promise.all([
+            readArgenPropResults(),
+            readZonaPropResults()
+        ]);
 
-    res.json(results);
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ 
-      error: 'Failed to fetch results',
-      details: error.message 
-    });
-  }
+        // Combinar y normalizar los resultados
+        const combinedResults = [
+            ...argenPropResults.map(prop => ({
+                ...prop,
+                source: 'ArgenProp'
+            })),
+            ...zonaPropResults.map(prop => ({
+                ...prop,
+                source: 'ZonaProp'
+            }))
+        ];
+
+        res.json(combinedResults);
+    } catch (error) {
+        console.error('Error en /api/search:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
+
+// Endpoint para obtener todos los resultados combinados
+app.get('/api/properties', async (req, res) => {
+    try {
+        const [argenPropResults, zonaPropResults] = await Promise.all([
+            readArgenPropResults(),
+            readZonaPropResults()
+        ]);
+        
+        // Combinar y normalizar los resultados
+        const combinedResults = [
+            ...argenPropResults.map(prop => ({
+                ...prop,
+                source: 'ArgenProp'
+            })),
+            ...zonaPropResults.map(prop => ({
+                ...prop,
+                source: 'ZonaProp'
+            }))
+        ];
+        
+        res.json(combinedResults);
+    } catch (error) {
+        console.error('Error en /api/properties:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
 });
 
 // Ruta de prueba
@@ -67,8 +133,30 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'Server is running!' });
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-  console.log(`Test endpoint available at http://localhost:${port}/api/test`);
-  console.log(`Frontend should be running at http://localhost:5173`);
+// Función para iniciar el servidor en un puerto disponible
+async function startServer(port) {
+  return new Promise((resolve, reject) => {
+    const server = app.listen(port)
+      .on('error', async (err) => {
+        if (err.code === 'EADDRINUSE') {
+          console.log(`Port ${port} is in use, trying port ${port + 1}`);
+          server.close();
+          resolve(startServer(port + 1));
+        } else {
+          reject(err);
+        }
+      })
+      .on('listening', () => {
+        console.log(`Server running at http://localhost:${port}`);
+        console.log(`Test endpoint available at http://localhost:${port}/api/test`);
+        console.log(`Frontend should be running at http://localhost:5173`);
+        resolve(server);
+      });
+  });
+}
+
+// Iniciar el servidor
+startServer(DEFAULT_PORT).catch(err => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
 }); 

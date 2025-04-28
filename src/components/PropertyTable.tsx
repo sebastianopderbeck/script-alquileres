@@ -1,39 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
-  Paper,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
-  Typography,
-  Button,
+  Paper,
   TableSortLabel,
+  Box,
+  Chip,
+  Typography,
 } from '@mui/material';
-import { Search } from '@mui/icons-material';
+import BrickLoader from './BrickLoader';
+import PropertyFilter from './PropertyFilter';
 
 interface Property {
-  title: string;
-  m2: number;
-  rooms: number;
-  expensas: number;
   price: number;
+  expensas: number;
   total: number;
+  rooms: number;
+  m2: number;
   location: string;
   permalink: string;
+  id: string;
+  title: string;
+  source: string;
 }
 
 type Order = 'asc' | 'desc';
 
-interface PropertyTableProps {
-  properties: Property[];
-  source: string;
-}
-
-const PropertyTable: React.FC<PropertyTableProps> = ({ properties, source }) => {
+function PropertyTable() {
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [initialLoading, setInitialLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [orderBy, setOrderBy] = useState<keyof Property>('total');
-  const [order, setOrder] = useState<Order>('desc');
+  const [order, setOrder] = useState<Order>('asc');
+  const [filter, setFilter] = useState('');
+  const [sourceFilter, setSourceFilter] = useState<string>('all');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('http://localhost:3002/api/properties');
+        if (!response.ok) {
+          throw new Error('Error al cargar los datos');
+        }
+        const data = await response.json();
+        setProperties(data);
+        setLoading(false);
+        
+        // Simular un tiempo mínimo de carga inicial
+        setTimeout(() => {
+          setInitialLoading(false);
+        }, 2000);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Error desconocido');
+        setLoading(false);
+        setInitialLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleRequestSort = (property: keyof Property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -41,60 +72,89 @@ const PropertyTable: React.FC<PropertyTableProps> = ({ properties, source }) => 
     setOrderBy(property);
   };
 
-  const getPropertyType = (title: string): string => {
-    const lowerTitle = title.toLowerCase();
-    if (lowerTitle.includes('ph')) {
-      return 'PH';
-    }
-    return 'Departamento';
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat('es-AR', {
+      style: 'currency',
+      currency: 'ARS',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
   };
 
-  const sortedProperties = React.useMemo(() => {
-    return [...properties].sort((a, b) => {
+  const filteredAndSortedProperties = useMemo(() => {
+    const filtered = properties.filter((property) => {
+      // Filtro por texto
+      const searchText = filter.toLowerCase();
+      const matchesText = searchText === '' || 
+        property.location.toLowerCase().includes(searchText);
+      
+      // Filtro por fuente
+      const matchesSource = sourceFilter === 'all' || property.source === sourceFilter;
+      
+      // Filtro por rango de precios
+      const matchesPriceRange = property.price >= 500000 && property.price <= 2000000;
+      
+      return matchesText && matchesSource && matchesPriceRange;
+    });
+
+    return [...filtered].sort((a, b) => {
       const aValue = a[orderBy];
       const bValue = b[orderBy];
-      
-      if (typeof aValue === 'string' && typeof bValue === 'string') {
-        return order === 'asc' 
-          ? aValue.localeCompare(bValue)
-          : bValue.localeCompare(aValue);
-      }
-      
-      return order === 'asc'
-        ? Number(aValue) - Number(bValue)
-        : Number(bValue) - Number(aValue);
-    });
-  }, [properties, orderBy, order]);
 
-  if (!properties || properties.length === 0) {
+      if (typeof aValue === 'number' && typeof bValue === 'number') {
+        return order === 'asc' ? aValue - bValue : bValue - aValue;
+      }
+
+      const aString = String(aValue).toLowerCase();
+      const bString = String(bValue).toLowerCase();
+
+      return order === 'asc' 
+        ? aString.localeCompare(bString)
+        : bString.localeCompare(aString);
+    });
+  }, [properties, filter, sourceFilter, order, orderBy]);
+
+  if (initialLoading || loading) {
     return (
-      <Paper sx={{ p: 3, mb: 3, background: 'linear-gradient(45deg, rgba(99, 102, 241, 0.1) 30%, rgba(139, 92, 246, 0.1) 90%)' }}>
-        <Typography variant="h5" component="h2" gutterBottom>
-          {source}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '400px',
+          gap: 2,
+        }}
+      >
+        <BrickLoader />
+        <Typography 
+          variant="h6" 
+          sx={{ 
+            color: 'text.secondary',
+            mt: 2
+          }}
+        >
+          Cargando propiedades...
         </Typography>
-        <Typography>No hay propiedades disponibles</Typography>
-      </Paper>
+      </Box>
     );
   }
 
+  if (error) return <Typography color="error">{error}</Typography>;
+
   return (
-    <Paper sx={{ p: 3, mb: 3, background: 'linear-gradient(45deg, rgba(99, 102, 241, 0.1) 30%, rgba(139, 92, 246, 0.1) 90%)' }}>
-      <Typography variant="h5" component="h2" gutterBottom>
-        {source}
-      </Typography>
-      <TableContainer>
-        <Table size="small">
+    <Box sx={{ width: '100%', mb: 4 }}>
+      <PropertyFilter
+        filter={filter}
+        sourceFilter={sourceFilter}
+        onFilterChange={setFilter}
+        onSourceFilterChange={setSourceFilter}
+      />
+      
+      <TableContainer component={Paper}>
+        <Table>
           <TableHead>
             <TableRow>
-              <TableCell>
-                <TableSortLabel
-                  active={orderBy === 'title'}
-                  direction={orderBy === 'title' ? order : 'asc'}
-                  onClick={() => handleRequestSort('title')}
-                >
-                  Tipo
-                </TableSortLabel>
-              </TableCell>
               <TableCell align="right">
                 <TableSortLabel
                   active={orderBy === 'm2'}
@@ -115,20 +175,20 @@ const PropertyTable: React.FC<PropertyTableProps> = ({ properties, source }) => 
               </TableCell>
               <TableCell align="right">
                 <TableSortLabel
-                  active={orderBy === 'expensas'}
-                  direction={orderBy === 'expensas' ? order : 'asc'}
-                  onClick={() => handleRequestSort('expensas')}
-                >
-                  Expensas
-                </TableSortLabel>
-              </TableCell>
-              <TableCell align="right">
-                <TableSortLabel
                   active={orderBy === 'price'}
                   direction={orderBy === 'price' ? order : 'asc'}
                   onClick={() => handleRequestSort('price')}
                 >
                   Precio
+                </TableSortLabel>
+              </TableCell>
+              <TableCell align="right">
+                <TableSortLabel
+                  active={orderBy === 'expensas'}
+                  direction={orderBy === 'expensas' ? order : 'asc'}
+                  onClick={() => handleRequestSort('expensas')}
+                >
+                  Expensas
                 </TableSortLabel>
               </TableCell>
               <TableCell align="right">
@@ -149,38 +209,72 @@ const PropertyTable: React.FC<PropertyTableProps> = ({ properties, source }) => 
                   Ubicación
                 </TableSortLabel>
               </TableCell>
+              <TableCell>Fuente</TableCell>
               <TableCell>Link</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {sortedProperties.map((prop, index) => (
-              <TableRow key={index} hover>
-                <TableCell>{getPropertyType(prop.title)}</TableCell>
-                <TableCell align="right">{prop.m2}</TableCell>
-                <TableCell align="right">{prop.rooms}</TableCell>
-                <TableCell align="right">${prop.expensas.toLocaleString()}</TableCell>
-                <TableCell align="right">${prop.price.toLocaleString()}</TableCell>
-                <TableCell align="right">${prop.total.toLocaleString()}</TableCell>
-                <TableCell>{prop.location}</TableCell>
-                <TableCell>
-                  <Button
-                    href={prop.permalink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    size="small"
-                    variant="contained"
-                    startIcon={<Search />}
-                  >
-                    Ver
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
+            {filteredAndSortedProperties.map((property, index) => {
+              const uniqueKey = `${property.source}-${property.id}-${property.location}-${index}`;
+              return (
+                <TableRow 
+                  key={uniqueKey}
+                  sx={{
+                    '&:nth-of-type(odd)': {
+                      backgroundColor: 'background.default',
+                    },
+                    '&:hover': {
+                      backgroundColor: 'action.hover',
+                    },
+                  }}
+                >
+                  <TableCell align="right">{property.m2}</TableCell>
+                  <TableCell align="right">{property.rooms}</TableCell>
+                  <TableCell align="right">{formatCurrency(property.price)}</TableCell>
+                  <TableCell align="right">{formatCurrency(property.expensas)}</TableCell>
+                  <TableCell align="right">{formatCurrency(property.total)}</TableCell>
+                  <TableCell>{property.location}</TableCell>
+                  <TableCell>
+                    <Chip 
+                      label={property.source} 
+                      color={property.source === 'ArgenProp' ? 'primary' : 'secondary'}
+                      size="small"
+                      sx={{ 
+                        fontWeight: 500,
+                        '&.MuiChip-root': {
+                          backgroundColor: property.source === 'ArgenProp' 
+                            ? 'rgba(74, 144, 226, 0.1)' 
+                            : 'rgba(80, 200, 120, 0.1)',
+                        }
+                      }}
+                    />
+                  </TableCell>
+                  <TableCell>
+                    <a 
+                      href={property.permalink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style={{
+                        color: 'primary.main',
+                        textDecoration: 'none',
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.textDecoration = 'underline'}
+                      onMouseLeave={(e) => e.currentTarget.style.textDecoration = 'none'}
+                    >
+                      Ver
+                    </a>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       </TableContainer>
-    </Paper>
+      <Typography sx={{ mt: 2, color: 'text.secondary', fontSize: '0.875rem' }}>
+        Total de propiedades: {filteredAndSortedProperties.length}
+      </Typography>
+    </Box>
   );
-};
+}
 
-export default PropertyTable; 
+export default PropertyTable;
