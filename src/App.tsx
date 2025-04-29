@@ -3,46 +3,75 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Container, Typography, Box } from '@mui/material';
 import PropertyTable from './components/PropertyTable';
+import FloatingHousesBackground from './components/FloatingHousesBackground';
 
 const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#4a90e2', // Azul suave
-      light: '#6ba7e8',
-      dark: '#3574b0',
+      main: '#1a5fb4', // Azul más oscuro
+      light: '#3584e4',
+      dark: '#0d52bf',
     },
     secondary: {
-      main: '#50c878', // Verde suave
-      light: '#73d394',
-      dark: '#3a8c56',
+      main: '#26a269', // Verde más oscuro
+      light: '#33d17a',
+      dark: '#1f7a4a',
     },
     background: {
-      default: '#f8fafc', // Gris muy claro
-      paper: '#ffffff', // Blanco
+      default: '#f6f5f4', // Gris muy claro
+      paper: '#ffffff',
     },
     text: {
-      primary: '#1a202c', // Casi negro
-      secondary: '#4a5568', // Gris oscuro
+      primary: '#1c1b1f', // Casi negro
+      secondary: '#4e4e4e', // Gris oscuro
+    },
+  },
+  typography: {
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontWeight: 700,
+      fontSize: '2.5rem',
+    },
+    h2: {
+      fontWeight: 600,
+      fontSize: '2rem',
+    },
+    h3: {
+      fontWeight: 600,
+      fontSize: '1.75rem',
+    },
+    body1: {
+      fontSize: '1rem',
+      lineHeight: 1.5,
     },
   },
   components: {
     MuiPaper: {
       styleOverrides: {
         root: {
-          boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+          borderRadius: 12,
+          boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
         },
       },
     },
-    MuiTableRow: {
+    MuiButton: {
       styleOverrides: {
         root: {
-          '&:nth-of-type(odd)': {
-            backgroundColor: '#f8fafc',
-          },
-          '&:hover': {
-            backgroundColor: '#f1f5f9',
-          },
+          borderRadius: 8,
+          textTransform: 'none',
+          fontWeight: 600,
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderBottom: '1px solid rgba(0,0,0,0.08)',
+        },
+        head: {
+          fontWeight: 600,
+          backgroundColor: '#f6f5f4',
         },
       },
     },
@@ -53,18 +82,25 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <FloatingHousesBackground />
       <Container maxWidth="xl">
-        <Box sx={{ my: 4 }}>
+        <Box sx={{ 
+          my: 6,
+          position: 'relative',
+          zIndex: 1,
+        }}>
           <Typography 
-            variant="h3" 
+            variant="h1" 
             component="h1" 
             gutterBottom
             sx={{
               color: 'primary.main',
               textAlign: 'center',
-              fontWeight: 600,
-              textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
+              fontWeight: 700,
               mb: 4,
+              background: 'linear-gradient(45deg, #1a5fb4 30%, #26a269 90%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}
           >
             Buscador de Propiedades
