@@ -230,7 +230,7 @@ function PropertyTable() {
             <Select
               value={orderBy}
               label="Ordenar por"
-              onChange={(e) => setOrderBy(e.target.value)}
+              onChange={(e) => setOrderBy(e.target.value as keyof Property)}
               sx={{ borderRadius: 2 }}
             >
               <MenuItem value="price">Precio</MenuItem>
@@ -246,10 +246,10 @@ function PropertyTable() {
             onClick={handleRefresh} 
             disabled={isRefreshing}
             sx={{ 
-              color: 'primary.main',
-              backgroundColor: 'rgba(26, 95, 180, 0.1)',
+              color: '#7c3aed',
+              backgroundColor: 'rgba(124, 58, 237, 0.1)',
               '&:hover': {
-                backgroundColor: 'rgba(26, 95, 180, 0.2)'
+                backgroundColor: 'rgba(124, 58, 237, 0.2)'
               }
             }}
           >
@@ -271,14 +271,14 @@ function PropertyTable() {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell align="right">m²</TableCell>
-              <TableCell align="right">Ambientes</TableCell>
-              <TableCell align="right">Precio</TableCell>
-              <TableCell align="right">Expensas</TableCell>
-              <TableCell align="right">Total</TableCell>
-              <TableCell>Ubicación</TableCell>
-              <TableCell>Fuente</TableCell>
-              <TableCell>Link</TableCell>
+              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>m²</TableCell>
+              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Ambientes</TableCell>
+              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Precio</TableCell>
+              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Expensas</TableCell>
+              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Total</TableCell>
+              <TableCell sx={{ color: '#3f0e6e', fontWeight: 600 }}>Ubicación</TableCell>
+              <TableCell sx={{ color: '#3f0e6e', fontWeight: 600 }}>Fuente</TableCell>
+              <TableCell sx={{ color: '#3f0e6e', fontWeight: 600 }}>Link</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -305,18 +305,18 @@ function PropertyTable() {
                       fontWeight: 600,
                       '&.MuiChip-root': {
                         backgroundColor: property.source === 'ArgenProp' 
-                          ? 'rgba(26, 95, 180, 0.2)' 
-                          : 'rgba(38, 162, 105, 0.2)',
+                          ? 'rgba(38, 162, 105, 0.2)' 
+                          : 'rgba(249, 115, 22, 0.2)',
                         '&:hover': {
                           backgroundColor: property.source === 'ArgenProp' 
-                            ? 'rgba(26, 95, 180, 0.3)' 
-                            : 'rgba(38, 162, 105, 0.3)',
+                            ? 'rgba(38, 162, 105, 0.3)' 
+                            : 'rgba(249, 115, 22, 0.3)',
                         }
                       },
                       '& .MuiChip-label': {
                         color: property.source === 'ArgenProp' 
-                          ? '#1a5fb4' 
-                          : '#26a269',
+                          ? '#1c1b1f' 
+                          : '#f97316',
                       }
                     }}
                   />
@@ -327,7 +327,7 @@ function PropertyTable() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     style={{
-                      color: '#1a5fb4',
+                      color: '#7c3aed',
                       textDecoration: 'none',
                       fontWeight: 500,
                     }}

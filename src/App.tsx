@@ -94,13 +94,10 @@ function App() {
             component="h1" 
             gutterBottom
             sx={{
-              color: 'primary.main',
+              color: '#7c3aed',
               textAlign: 'center',
               fontWeight: 700,
               mb: 4,
-              background: 'linear-gradient(45deg, #1a5fb4 30%, #26a269 90%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
             }}
           >
             Buscador de Propiedades
