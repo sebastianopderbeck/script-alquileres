@@ -93,31 +93,20 @@ function PropertyTable() {
   };
 
   const filteredAndSortedProperties = useMemo(() => {
-    console.log('Properties:', properties);
-    console.log('Source Filter:', sourceFilter);
+    let filtered = properties;
     
-    const filtered = properties.filter((property) => {
-      // Filtro por texto
-      const searchText = filter.toLowerCase();
-      const matchesText = searchText === '' || 
-        property.location.toLowerCase().includes(searchText);
-      
-      // Filtro por fuente (case insensitive)
-      const propertySource = property.source.toLowerCase();
-      const matchesSource = sourceFilter === 'all' || 
-        (sourceFilter.toLowerCase() === 'argenprop' && propertySource === 'argenprop') ||
-        (sourceFilter.toLowerCase() === 'zonaprop' && propertySource === 'zonaprop');
-      
-      // Filtro por rango de precios
-      const matchesPriceRange = property.price >= 500000 && property.price <= 2000000;
-      
-      console.log('Property:', property.source, 'Matches Source:', matchesSource);
-      
-      return matchesText && matchesSource && matchesPriceRange;
-    });
+    if (filter) {
+      filtered = filtered.filter(property => 
+        property.location.toLowerCase().includes(filter.toLowerCase())
+      );
+    }
 
-    console.log('Filtered Properties:', filtered);
-    
+    if (sourceFilter !== 'all') {
+      filtered = filtered.filter(property => 
+        property.source.toLowerCase() === sourceFilter.toLowerCase()
+      );
+    }
+
     return [...filtered].sort((a, b) => {
       const aValue = a[orderBy];
       const bValue = b[orderBy];
@@ -142,7 +131,8 @@ function PropertyTable() {
       if (!response.ok) {
         throw new Error('Error al recargar las propiedades');
       }
-      // La tabla se actualizará automáticamente cuando las propiedades cambien
+      // Mostrar el loader por 6 segundos
+      await new Promise(resolve => setTimeout(resolve, 6000));
     } catch (error) {
       console.error('Error al recargar:', error);
     } finally {
@@ -158,7 +148,8 @@ function PropertyTable() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: '400px',
+          minHeight: '100%',
+          minWidth: '100%',
           gap: 2,
         }}
       >
@@ -185,8 +176,52 @@ function PropertyTable() {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: 3
+      gap: 3,
+      position: 'relative',
     }}>
+      {isRefreshing && (
+        <>
+          <Box
+            sx={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              zIndex: 1,
+            }}
+          />
+          <Box
+            sx={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'rgba(255, 255, 255, 0.7)',
+              zIndex: 2,
+              padding: '2rem',
+              borderRadius: '1rem',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            }}
+          >
+            <BrickLoader />
+            <Typography 
+              variant="h6" 
+              sx={{ 
+                color: 'text.secondary',
+                mt: 2
+              }}
+            >
+              Actualizando propiedades...
+            </Typography>
+          </Box>
+        </>
+      )}
       <Box sx={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
@@ -209,11 +244,14 @@ function PropertyTable() {
               width: 200,
               '& .MuiOutlinedInput-root': {
                 borderRadius: 2,
+              },
+              '& .MuiInputLabel-root': {
+                color: '#3f0e6e',
               }
             }}
           />
           <FormControl size="small" sx={{ minWidth: 120 }}>
-            <InputLabel>Fuente</InputLabel>
+            <InputLabel sx={{ color: '#3f0e6e' }}>Fuente</InputLabel>
             <Select
               value={sourceFilter}
               label="Fuente"
@@ -226,7 +264,7 @@ function PropertyTable() {
             </Select>
           </FormControl>
           <FormControl size="small" sx={{ minWidth: 120 }}>
-            <InputLabel>Ordenar por</InputLabel>
+            <InputLabel sx={{ color: '#3f0e6e' }}>Ordenar por</InputLabel>
             <Select
               value={orderBy}
               label="Ordenar por"
@@ -271,23 +309,108 @@ function PropertyTable() {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>m²</TableCell>
-              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Ambientes</TableCell>
-              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Precio</TableCell>
-              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Expensas</TableCell>
-              <TableCell align="right" sx={{ color: '#3f0e6e', fontWeight: 600 }}>Total</TableCell>
-              <TableCell sx={{ color: '#3f0e6e', fontWeight: 600 }}>Ubicación</TableCell>
-              <TableCell sx={{ color: '#3f0e6e', fontWeight: 600 }}>Fuente</TableCell>
-              <TableCell sx={{ color: '#3f0e6e', fontWeight: 600 }}>Link</TableCell>
+              <TableCell 
+                align="right" 
+                sx={{ color: '#3f0e6e', fontWeight: 600 }}
+                onClick={() => handleRequestSort('m2')}
+                style={{ cursor: 'pointer' }}
+              >
+                <TableSortLabel
+                  active={orderBy === 'm2'}
+                  direction={orderBy === 'm2' ? order : 'asc'}
+                >
+                  m²
+                </TableSortLabel>
+              </TableCell>
+              <TableCell 
+                align="right" 
+                sx={{ color: '#3f0e6e', fontWeight: 600 }}
+                onClick={() => handleRequestSort('rooms')}
+                style={{ cursor: 'pointer' }}
+              >
+                <TableSortLabel
+                  active={orderBy === 'rooms'}
+                  direction={orderBy === 'rooms' ? order : 'asc'}
+                >
+                  Ambientes
+                </TableSortLabel>
+              </TableCell>
+              <TableCell 
+                align="right" 
+                sx={{ color: '#3f0e6e', fontWeight: 600 }}
+                onClick={() => handleRequestSort('price')}
+                style={{ cursor: 'pointer' }}
+              >
+                <TableSortLabel
+                  active={orderBy === 'price'}
+                  direction={orderBy === 'price' ? order : 'asc'}
+                >
+                  Precio
+                </TableSortLabel>
+              </TableCell>
+              <TableCell 
+                align="right" 
+                sx={{ color: '#3f0e6e', fontWeight: 600 }}
+                onClick={() => handleRequestSort('expensas')}
+                style={{ cursor: 'pointer' }}
+              >
+                <TableSortLabel
+                  active={orderBy === 'expensas'}
+                  direction={orderBy === 'expensas' ? order : 'asc'}
+                >
+                  Expensas
+                </TableSortLabel>
+              </TableCell>
+              <TableCell 
+                align="right" 
+                sx={{ color: '#3f0e6e', fontWeight: 600 }}
+                onClick={() => handleRequestSort('total')}
+                style={{ cursor: 'pointer' }}
+              >
+                <TableSortLabel
+                  active={orderBy === 'total'}
+                  direction={orderBy === 'total' ? order : 'asc'}
+                >
+                  Total
+                </TableSortLabel>
+              </TableCell>
+              <TableCell 
+                sx={{ color: '#3f0e6e', fontWeight: 600 }}
+                onClick={() => handleRequestSort('location')}
+                style={{ cursor: 'pointer' }}
+              >
+                <TableSortLabel
+                  active={orderBy === 'location'}
+                  direction={orderBy === 'location' ? order : 'asc'}
+                >
+                  Ubicación
+                </TableSortLabel>
+              </TableCell>
+              <TableCell 
+                sx={{ color: '#3f0e6e', fontWeight: 600 }}
+                onClick={() => handleRequestSort('source')}
+                style={{ cursor: 'pointer' }}
+              >
+                <TableSortLabel
+                  active={orderBy === 'source'}
+                  direction={orderBy === 'source' ? order : 'asc'}
+                >
+                  Fuente
+                </TableSortLabel>
+              </TableCell>
+              <TableCell sx={{ color: '#3f0e6e', fontWeight: 600 }}>
+                Link
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredAndSortedProperties.map((property) => (
+            {filteredAndSortedProperties.map((property, index) => (
               <TableRow 
-                key={property.id}
+                key={`${property.id}-${index}`}
                 sx={{
+                  backgroundColor: index % 2 === 0 ? 'rgba(189, 145, 217, 0.1)' : 'rgba(196, 196, 196, 0.1)',
                   '&:hover': {
-                    backgroundColor: 'rgba(26, 95, 180, 0.02)'
+                    backgroundColor: index % 2 === 0 ? 'rgba(189, 145, 217, 0.2)' : 'rgba(196, 196, 196, 0.2)'
                   }
                 }}
               >

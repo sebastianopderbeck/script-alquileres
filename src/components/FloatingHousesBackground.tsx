@@ -30,10 +30,10 @@ const FloatingHousesBackground: React.FC = () => {
           right: 0,
           bottom: 0,
           background: `
-            linear-gradient(90deg, rgba(26, 95, 180, 0.1) 1px, transparent 1px),
-            linear-gradient(0deg, rgba(26, 95, 180, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-            linear-gradient(0deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)
+            linear-gradient(90deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px),
+            linear-gradient(0deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(249, 115, 22, 0.2) 1px, transparent 1px),
+            linear-gradient(0deg, rgba(249, 115, 22, 0.2) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px, 80px 80px, 40px 40px, 40px 40px',
           animation: `${moveGrid} 20s linear infinite`,
@@ -41,25 +41,25 @@ const FloatingHousesBackground: React.FC = () => {
           zIndex: 1,
         },
         '&::after': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
           right: 0,
           bottom: 0,
           background: `
-            linear-gradient(90deg, rgba(99, 102, 241, 0.2) 2px, transparent 2px),
-            linear-gradient(0deg, rgba(99, 102, 241, 0.2) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-            linear-gradient(0deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)
+            linear-gradient(90deg, rgba(38, 162, 105, 0.3) 2px, transparent 2px),
+            linear-gradient(0deg, rgba(38, 162, 105, 0.3) 2px, transparent 2px),
+            linear-gradient(90deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px),
+            linear-gradient(0deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px)
           `,
           backgroundSize: '160px 160px, 160px 160px, 80px 80px, 80px 80px',
           animation: `${moveGrid} 30s linear infinite reverse`,
           opacity: 0.3,
           zIndex: 1,
-        }
-      }}
-    />
+          }
+        }}
+      />
   );
 };
 
