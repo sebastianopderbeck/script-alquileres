@@ -154,15 +154,6 @@ function PropertyTable() {
         }}
       >
         <BrickLoader />
-        <Typography 
-          variant="h6" 
-          sx={{ 
-            color: 'text.secondary',
-            mt: 2
-          }}
-        >
-          Cargando propiedades...
-        </Typography>
       </Box>
     );
   }
@@ -210,15 +201,6 @@ function PropertyTable() {
             }}
           >
             <BrickLoader />
-            <Typography 
-              variant="h6" 
-              sx={{ 
-                color: 'text.secondary',
-                mt: 2
-              }}
-            >
-              Actualizando propiedades...
-            </Typography>
           </Box>
         </>
       )}
