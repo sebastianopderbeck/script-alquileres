@@ -150,7 +150,6 @@ function PropertyTable() {
           justifyContent: 'center',
           minHeight: '100%',
           minWidth: '100%',
-          gap: 2,
         }}
       >
         <BrickLoader />
@@ -163,12 +162,12 @@ function PropertyTable() {
   return (
     <Box sx={{ 
       width: '100%', 
-      p: 3,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       gap: 3,
       position: 'relative',
+      marginTop: '20px'
     }}>
       {isRefreshing && (
         <>

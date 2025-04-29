@@ -1428,18 +1428,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 720000,
-    "expensas": 0,
-    "total": 720000,
-    "rooms": 2,
-    "m2": 73,
-    "location": "Gabriela Mistral 3100",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17194629",
-    "id": "17194629",
-    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 80000080000,
     "expensas": 80000,
     "total": 80000160000,
@@ -1521,18 +1509,6 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17269472",
     "id": "17269472",
     "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 1500510000,
-    "expensas": 510000,
-    "total": 1501020000,
-    "rooms": 3,
-    "m2": 144,
-    "location": "Beiro 3300",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17272153",
-    "id": "17272153",
-    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -1944,27 +1920,51 @@
     "source": "ArgenProp"
   },
   {
-    "price": 1000000,
+    "price": 720000,
     "expensas": 0,
-    "total": 1000000,
-    "rooms": 3,
-    "m2": 236,
-    "location": "NUEVA YORK 4831 100, Piso 1",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--17373407",
-    "id": "17373407",
-    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "total": 720000,
+    "rooms": 2,
+    "m2": 73,
+    "location": "Gabriela Mistral 3100",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17376486",
+    "id": "17376486",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
     "source": "ArgenProp"
   },
   {
-    "price": 2200000,
+    "price": 1500510000,
+    "expensas": 510000,
+    "total": 1501020000,
+    "rooms": 3,
+    "m2": 144,
+    "location": "Beiro 3300",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17376521",
+    "id": "17376521",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 720000,
     "expensas": 0,
-    "total": 2200000,
+    "total": 720000,
     "rooms": 2,
-    "m2": 9290,
-    "location": "San Nicolas 4700",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17373948",
-    "id": "17373948",
-    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "m2": 73,
+    "location": "Gabriela Mistral 3100",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17376486",
+    "id": "17376486",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1500510000,
+    "expensas": 510000,
+    "total": 1501020000,
+    "rooms": 3,
+    "m2": 144,
+    "location": "Beiro 3300",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17376521",
+    "id": "17376521",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
     "source": "ArgenProp"
   }
 ]

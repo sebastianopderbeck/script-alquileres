@@ -83,25 +83,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <FloatingHousesBackground />
+      
       <Container maxWidth="xl">
         <Box sx={{ 
-          my: 6,
+          my: 1,
           position: 'relative',
           zIndex: 1,
         }}>
-          <Typography 
-            variant="h1" 
-            component="h1" 
-            gutterBottom
-            sx={{
-              color: '#7c3aed',
-              textAlign: 'center',
-              fontWeight: 700,
-              mb: 4,
-            }}
-          >
-            Buscador de Propiedades
-          </Typography>
           <PropertyTable />
         </Box>
       </Container>
