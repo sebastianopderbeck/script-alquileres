@@ -756,18 +756,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 1150000,
-    "expensas": 0,
-    "total": 1150000,
-    "rooms": 2,
-    "m2": 75,
-    "location": "Bahia Blanca 3200",
-    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-devoto-3-ambientes--5788925",
-    "id": "5788925",
-    "title": "PH en Alquiler en Villa Devoto, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 850000,
     "expensas": 0,
     "total": 850000,
@@ -885,18 +873,6 @@
     "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-pueyrredon-3-ambientes--17236661",
     "id": "17236661",
     "title": "PH en Alquiler en Villa Pueyrredon, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 75000098000,
-    "expensas": 98000,
-    "total": 75000196000,
-    "rooms": 2,
-    "m2": 70,
-    "location": "Manuela pedraza al 4800",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17271254",
-    "id": "17271254",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -1920,15 +1896,15 @@
     "source": "ArgenProp"
   },
   {
-    "price": 1500510000,
-    "expensas": 510000,
-    "total": 1501020000,
-    "rooms": 3,
-    "m2": 144,
-    "location": "Beiro 3300",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17376521",
-    "id": "17376521",
-    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "price": 720000,
+    "expensas": 0,
+    "total": 720000,
+    "rooms": 2,
+    "m2": 73,
+    "location": "Gabriela Mistral 3100",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17376486",
+    "id": "17376486",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
     "source": "ArgenProp"
   },
   {
