@@ -12,24 +12,25 @@ HTML_DIR = './htmls'
 RESULTS_FILE = 'zonaPropResults.json'
 
 # URLs a scrapear
-PAGES = [
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-2.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-3.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-4.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-5.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-6.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-7.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-8.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-9.html',
-    'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-10.html'
-]
+BASE_URL = 'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes.html'
+PAGES = [BASE_URL] + [f'https://www.zonaprop.com.ar/departamentos-ph-alquiler-villa-urquiza-villa-pueyrredon-villa-devoto-monte-castro-mas-de-3-ambientes-pagina-{i}.html' for i in range(2, 11)]
 
 # Headers para simular un navegador
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
     'Accept-Language': 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Cache-Control': 'max-age=0',
+    'sec-ch-ua': '"Not.A/Brand";v="8", "Chromium";v="114", "Google Chrome";v="114"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1'
 }
 
 def ensure_html_dir():
@@ -89,16 +90,16 @@ def save_results(results):
 def extract_property_data(soup, url):
     """Extrae los datos de las propiedades de una página"""
     properties = []
-    cards = soup.select('.posting-card')
+    cards = soup.select('div[data-qa="posting PROPERTY"]')
     
     for card in cards:
         try:
             # Extraer precio y expensas
-            price_text = card.select_one('.price-items').text if card.select_one('.price-items') else ''
-            expensas_text = card.select_one('.expensas').text if card.select_one('.expensas') else ''
+            price_text = card.select_one('[data-qa="POSTING_CARD_PRICE"]').text if card.select_one('[data-qa="POSTING_CARD_PRICE"]') else ''
+            expensas_text = card.select_one('[data-qa="expensas"]').text if card.select_one('[data-qa="expensas"]') else ''
             
             # Extraer características
-            features = card.select('.feature')
+            features = card.select('[data-qa="POSTING_CARD_FEATURES"] span')
             rooms = 0
             m2 = 0
             for feature in features:
@@ -109,18 +110,21 @@ def extract_property_data(soup, url):
                     m2 = extract_number(text)
             
             # Extraer ubicación y título
-            location = card.select_one('.location').text.strip() if card.select_one('.location') else ''
-            title = card.select_one('.title').text.strip() if card.select_one('.title') else ''
+            location = card.select_one('[data-qa="POSTING_CARD_LOCATION"]').text.strip() if card.select_one('[data-qa="POSTING_CARD_LOCATION"]') else ''
+            title = card.select_one('[data-qa="POSTING_CARD_DESCRIPTION"] a').text.strip() if card.select_one('[data-qa="POSTING_CARD_DESCRIPTION"] a') else ''
             
             # Extraer link e ID
-            link = card.select_one('a[href*="/inmueble-"]')
+            link = card.select_one('[data-qa="POSTING_CARD_DESCRIPTION"] a')
             permalink = link['href'] if link else ''
-            property_id = link['href'].split('-')[-1] if link else ''
+            property_id = card.get('data-id', '')
             
             # Calcular total
             price = extract_number(price_text)
             expensas = extract_number(expensas_text)
             total = price + expensas
+            
+            # Extraer dirección específica
+            address = card.select_one('.postingLocations-module__location-address').text.strip() if card.select_one('.postingLocations-module__location-address') else ''
             
             properties.append({
                 'price': price,
@@ -129,6 +133,7 @@ def extract_property_data(soup, url):
                 'rooms': rooms,
                 'm2': m2,
                 'location': location,
+                'address': address,
                 'permalink': permalink,
                 'id': property_id,
                 'title': title[:50]  # Limitar el título a 50 caracteres

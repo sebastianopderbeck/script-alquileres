@@ -82,21 +82,31 @@ function PropertyTable() {
   };
 
   const filteredAndSortedProperties = useMemo(() => {
+    console.log('Properties:', properties);
+    console.log('Source Filter:', sourceFilter);
+    
     const filtered = properties.filter((property) => {
       // Filtro por texto
       const searchText = filter.toLowerCase();
       const matchesText = searchText === '' || 
         property.location.toLowerCase().includes(searchText);
       
-      // Filtro por fuente
-      const matchesSource = sourceFilter === 'all' || property.source === sourceFilter;
+      // Filtro por fuente (case insensitive)
+      const propertySource = property.source.toLowerCase();
+      const matchesSource = sourceFilter === 'all' || 
+        (sourceFilter.toLowerCase() === 'argenprop' && propertySource === 'argenprop') ||
+        (sourceFilter.toLowerCase() === 'zonaprop' && propertySource === 'zonaprop');
       
       // Filtro por rango de precios
       const matchesPriceRange = property.price >= 500000 && property.price <= 2000000;
       
+      console.log('Property:', property.source, 'Matches Source:', matchesSource);
+      
       return matchesText && matchesSource && matchesPriceRange;
     });
 
+    console.log('Filtered Properties:', filtered);
+    
     return [...filtered].sort((a, b) => {
       const aValue = a[orderBy];
       const bValue = b[orderBy];
