@@ -86,10 +86,26 @@ function App() {
       
       <Container maxWidth="xl">
         <Box sx={{ 
-          my: 1,
           position: 'relative',
           zIndex: 1,
+          width: '100%',
+          height: '100vh',
         }}>
+          <Typography 
+            variant="h1" 
+            component="h1" 
+            sx={{ 
+              textAlign: 'left',
+              '& span:first-of-type': {
+                color: '#6b46c1', // Morado oscuro
+              },
+              '& span:last-of-type': {
+                color: '#9f7aea', // Morado claro
+              }
+            }}
+          >
+            <span>Simpli</span><span>Prop</span>
+          </Typography>
           <PropertyTable />
         </Box>
       </Container>

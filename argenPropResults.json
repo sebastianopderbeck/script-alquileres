@@ -492,18 +492,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 850000152000,
-    "expensas": 152000,
-    "total": 850000304000,
-    "rooms": 2,
-    "m2": 55,
-    "location": "Talavera 5900, Piso 2",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17373829",
-    "id": "17373829",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 1150000180000,
     "expensas": 180000,
     "total": 1150000360000,
@@ -525,6 +513,18 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-3-ambientes--17336094",
     "id": "17336094",
     "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 850000152000,
+    "expensas": 152000,
+    "total": 850000304000,
+    "rooms": 2,
+    "m2": 55,
+    "location": "Talavera 5900, Piso 2",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17373829",
+    "id": "17373829",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -1920,18 +1920,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 720000,
-    "expensas": 0,
-    "total": 720000,
-    "rooms": 2,
-    "m2": 73,
-    "location": "Gabriela Mistral 3100",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17376486",
-    "id": "17376486",
-    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 1500510000,
     "expensas": 510000,
     "total": 1501020000,
@@ -1941,18 +1929,6 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17376521",
     "id": "17376521",
     "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 720000,
-    "expensas": 0,
-    "total": 720000,
-    "rooms": 2,
-    "m2": 73,
-    "location": "Gabriela Mistral 3100",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17376486",
-    "id": "17376486",
-    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
     "source": "ArgenProp"
   },
   {

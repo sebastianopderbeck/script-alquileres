@@ -16,13 +16,10 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  CircularProgress,
-  Button,
   IconButton,
   Tooltip
 } from '@mui/material';
 import BrickLoader from './BrickLoader';
-import PropertyFilter from './PropertyFilter';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
 interface Property {
@@ -127,14 +124,11 @@ function PropertyTable() {
   const handleRefresh = async () => {
     setIsRefreshing(true);
     try {
-      const response = await fetch('http://localhost:3001/api/search');
-      if (!response.ok) {
-        throw new Error('Error al recargar las propiedades');
-      }
-      // Mostrar el loader por 6 segundos
-      await new Promise(resolve => setTimeout(resolve, 6000));
-    } catch (error) {
-      console.error('Error al recargar:', error);
+      const response = await fetch('http://localhost:3002/api/properties');
+        if (!response.ok) {
+          throw new Error('Error al cargar los datos');
+        }
+      await new Promise(resolve => setTimeout(resolve, 2000));
     } finally {
       setIsRefreshing(false);
     }
@@ -186,16 +180,13 @@ function PropertyTable() {
             sx={{
               position: 'fixed',
               top: '50%',
-              left: '50%',
+              left: '50',
               transform: 'translate(-50%, -50%)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: 'rgba(255, 255, 255, 0.7)',
               zIndex: 2,
-              padding: '2rem',
-              borderRadius: '1rem',
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
             }}
           >
