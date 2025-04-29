@@ -46,6 +46,8 @@ function PropertyTable() {
   const [order, setOrder] = useState<Order>('asc');
   const [filter, setFilter] = useState('');
   const [sourceFilter, setSourceFilter] = useState<string>('all');
+  const [minPrice, setMinPrice] = useState<number | ''>('');
+  const [maxPrice, setMaxPrice] = useState<number | ''>('');
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
@@ -104,6 +106,14 @@ function PropertyTable() {
       );
     }
 
+    if (minPrice !== '') {
+      filtered = filtered.filter(property => property.total >= minPrice);
+    }
+
+    if (maxPrice !== '') {
+      filtered = filtered.filter(property => property.total <= maxPrice);
+    }
+
     return [...filtered].sort((a, b) => {
       const aValue = a[orderBy];
       const bValue = b[orderBy];
@@ -119,7 +129,7 @@ function PropertyTable() {
         ? aString.localeCompare(bString)
         : bString.localeCompare(aString);
     });
-  }, [properties, filter, sourceFilter, order, orderBy]);
+  }, [properties, filter, sourceFilter, minPrice, maxPrice, order, orderBy]);
 
   const handleRefresh = async () => {
     setIsRefreshing(true);
@@ -206,6 +216,40 @@ function PropertyTable() {
         boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
       }}>
         <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+          <TextField
+            label="Precio mínimo"
+            variant="outlined"
+            size="small"
+            type="number"
+            value={minPrice}
+            onChange={(e) => setMinPrice(e.target.value === '' ? '' : Number(e.target.value))}
+            sx={{ 
+              width: 150,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 2,
+              },
+              '& .MuiInputLabel-root': {
+                color: '#3f0e6e',
+              }
+            }}
+          />
+          <TextField
+            label="Precio máximo"
+            variant="outlined"
+            size="small"
+            type="number"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value === '' ? '' : Number(e.target.value))}
+            sx={{ 
+              width: 150,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 2,
+              },
+              '& .MuiInputLabel-root': {
+                color: '#3f0e6e',
+              }
+            }}
+          />
           <TextField
             label="Buscar"
             variant="outlined"
