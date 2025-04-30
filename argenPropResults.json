@@ -24,6 +24,18 @@
     "source": "ArgenProp"
   },
   {
+    "price": 750000,
+    "expensas": 0,
+    "total": 750000,
+    "rooms": 2,
+    "m2": 55,
+    "location": "Campana 2800, Piso 1",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-3-ambientes--10692982",
+    "id": "10692982",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
     "price": 550000,
     "expensas": 0,
     "total": 550000,
@@ -1785,18 +1797,6 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17354538",
     "id": "17354538",
     "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 1300000,
-    "expensas": 0,
-    "total": 1300000,
-    "rooms": 2,
-    "m2": 75,
-    "location": "Holmberg 3000",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17357513",
-    "id": "17357513",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
