@@ -212,19 +212,6 @@ def main():
     # Mostrar estadísticas
     print("\nEstadísticas finales:")
     print(f"Total de propiedades guardadas: {len(all_properties)}")
-    
-    # Mostrar algunas propiedades como ejemplo
-    print("\nEjemplos de propiedades encontradas:")
-    for prop in all_properties[:3]:  # Mostrar las primeras 3 propiedades
-        print(f"\nPropiedad:")
-        print(f"  ID: {prop['id']}")
-        print(f"  Título: {prop['title']}")
-        print(f"  Ubicación: {prop['location']}")
-        print(f"  Precio: {prop['price']}")
-        print(f"  Expensas: {prop['expensas']}")
-        print(f"  Total: {prop['total']}")
-        print(f"  Ambientes: {prop['rooms']}")
-        print(f"  m²: {prop['m2']}")
 
 if __name__ == "__main__":
     main() 

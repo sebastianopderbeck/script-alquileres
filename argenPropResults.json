@@ -1,5 +1,17 @@
 [
   {
+    "price": 750000120000,
+    "expensas": 120000,
+    "total": 750000240000,
+    "rooms": 1,
+    "m2": 50,
+    "location": "Mendoza 5400, Piso Pb",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-urquiza-r-3-ambientes--17170341",
+    "id": "17170341",
+    "title": "Departamento en Alquiler en Urquiza R, Villa Urquiza",
+    "source": "ArgenProp"
+  },
+  {
     "price": 65000055000,
     "expensas": 55000,
     "total": 65000110000,
@@ -24,15 +36,15 @@
     "source": "ArgenProp"
   },
   {
-    "price": 750000,
-    "expensas": 0,
-    "total": 750000,
+    "price": 80000080000,
+    "expensas": 80000,
+    "total": 80000160000,
     "rooms": 2,
-    "m2": 55,
-    "location": "Campana 2800, Piso 1",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-3-ambientes--10692982",
-    "id": "10692982",
-    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "m2": 60,
+    "location": "B Aizpurua 2900, Piso 3",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17328036",
+    "id": "17328036",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -44,6 +56,30 @@
     "location": "Nazarre 3200",
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-3-ambientes--17113030",
     "id": "17113030",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 780000130000,
+    "expensas": 130000,
+    "total": 780000260000,
+    "rooms": 2,
+    "m2": 60,
+    "location": "Bahía Blanca 3300, Piso 11",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17138968",
+    "id": "17138968",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 750000300000,
+    "expensas": 300000,
+    "total": 750000600000,
+    "rooms": 3,
+    "m2": 86,
+    "location": "Av Nazca 3300, Piso 2",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17174014",
+    "id": "17174014",
     "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
     "source": "ArgenProp"
   },
@@ -60,18 +96,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 750000300000,
-    "expensas": 300000,
-    "total": 750000600000,
-    "rooms": 3,
-    "m2": 86,
-    "location": "Av Nazca 3300, Piso 2",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17174014",
-    "id": "17174014",
-    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 1200000116000,
     "expensas": 116000,
     "total": 1200000232000,
@@ -81,6 +105,18 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--17020050",
     "id": "17020050",
     "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 850000140000,
+    "expensas": 140000,
+    "total": 850000280000,
+    "rooms": 2,
+    "m2": 56,
+    "location": "Av Salvador M. del Carril 2900, Piso 1",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17341289",
+    "id": "17341289",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -96,15 +132,15 @@
     "source": "ArgenProp"
   },
   {
-    "price": 850000140000,
-    "expensas": 140000,
-    "total": 850000280000,
+    "price": 750000,
+    "expensas": 0,
+    "total": 750000,
     "rooms": 2,
-    "m2": 56,
-    "location": "Av Salvador M. del Carril 2900, Piso 1",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17341289",
-    "id": "17341289",
-    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
+    "m2": 55,
+    "location": "Campana 2800, Piso 1",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-3-ambientes--10692982",
+    "id": "10692982",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -204,6 +240,18 @@
     "source": "ArgenProp"
   },
   {
+    "price": 1200000100000,
+    "expensas": 100000,
+    "total": 1200000200000,
+    "rooms": 2,
+    "m2": 90,
+    "location": "Vallejos 3300, Piso 3",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--17391130",
+    "id": "17391130",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
     "price": 1500000187000,
     "expensas": 187000,
     "total": 1500000374000,
@@ -276,6 +324,18 @@
     "source": "ArgenProp"
   },
   {
+    "price": 950000180000,
+    "expensas": 180000,
+    "total": 950000360000,
+    "rooms": 2,
+    "m2": 67,
+    "location": "Asunción al 3200",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17354538",
+    "id": "17354538",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
     "price": 75000089000,
     "expensas": 89000,
     "total": 75000178000,
@@ -284,18 +344,6 @@
     "location": "Av. Mosconi 3200",
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17239283",
     "id": "17239283",
-    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 780000130000,
-    "expensas": 130000,
-    "total": 780000260000,
-    "rooms": 2,
-    "m2": 60,
-    "location": "Bahía Blanca 3300, Piso 11",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17138968",
-    "id": "17138968",
     "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
     "source": "ArgenProp"
   },
@@ -309,18 +357,6 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--16257182",
     "id": "16257182",
     "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 80000080000,
-    "expensas": 80000,
-    "total": 80000160000,
-    "rooms": 2,
-    "m2": 60,
-    "location": "B Aizpurua 2900, Piso 3",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17328036",
-    "id": "17328036",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -432,18 +468,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 650000150000,
-    "expensas": 150000,
-    "total": 650000300000,
-    "rooms": 2,
-    "m2": 2,
-    "location": "Garay 3400, Piso 4",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17345378",
-    "id": "17345378",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 900000,
     "expensas": 0,
     "total": 900000,
@@ -468,18 +492,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 1200000150000,
-    "expensas": 150000,
-    "total": 1200000300000,
-    "rooms": 3,
-    "m2": 74,
-    "location": "JURAMENTO 4900, Piso 9",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17342782",
-    "id": "17342782",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 2200000,
     "expensas": 0,
     "total": 2200000,
@@ -489,18 +501,6 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-urquiza-r-4-ambientes--17348819",
     "id": "17348819",
     "title": "Departamento en Alquiler en Urquiza R, Villa Urquiza",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 1500000231700,
-    "expensas": 231700,
-    "total": 1500000463400,
-    "rooms": 3,
-    "m2": 95,
-    "location": "Triunvirato al 3700 Villa Urquiza",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-4-ambientes--17199898",
-    "id": "17199898",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -636,6 +636,18 @@
     "source": "ArgenProp"
   },
   {
+    "price": 900000310000,
+    "expensas": 310000,
+    "total": 900000620000,
+    "rooms": 2,
+    "m2": 0,
+    "location": "Gabriela mistral 3100, Piso 5",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--12940617",
+    "id": "12940617",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
     "price": 84000075000,
     "expensas": 75000,
     "total": 84000150000,
@@ -720,9 +732,9 @@
     "source": "ArgenProp"
   },
   {
-    "price": 72000050000,
+    "price": 73000050000,
     "expensas": 50000,
-    "total": 72000100000,
+    "total": 73000100000,
     "rooms": 2,
     "m2": 7879,
     "location": "José Cubas 4100, Piso 2",
@@ -780,9 +792,9 @@
     "source": "ArgenProp"
   },
   {
-    "price": 600000150000,
-    "expensas": 150000,
-    "total": 600000300000,
+    "price": 600000120000,
+    "expensas": 120000,
+    "total": 600000240000,
     "rooms": 2,
     "m2": 49,
     "location": "Avenida San Martín 4900, Piso 7",
@@ -813,18 +825,6 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--8239310",
     "id": "8239310",
     "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 800000,
-    "expensas": 0,
-    "total": 800000,
-    "rooms": 2,
-    "m2": 60,
-    "location": "Diego Fernández Espiro 2400",
-    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-del-parque-3-ambientes--17155074",
-    "id": "17155074",
-    "title": "PH en Alquiler en Villa del Parque, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -912,18 +912,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 900000160000,
-    "expensas": 160000,
-    "total": 900000320000,
-    "rooms": 2,
-    "m2": 7174,
-    "location": "Avenida Álvarez Thomas 3300, Piso 14",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17273838",
-    "id": "17273838",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 650000298000,
     "expensas": 298000,
     "total": 650000596000,
@@ -969,6 +957,42 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17351367",
     "id": "17351367",
     "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1200000175000,
+    "expensas": 175000,
+    "total": 1200000350000,
+    "rooms": 2,
+    "m2": 70,
+    "location": "Aizpurua 2700, Piso 3",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17341257",
+    "id": "17341257",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1200000175000,
+    "expensas": 175000,
+    "total": 1200000350000,
+    "rooms": 2,
+    "m2": 70,
+    "location": "Aizpurua 2700, Piso 3",
+    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-urquiza-3-ambientes--17336958",
+    "id": "17336958",
+    "title": "PH en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 700,
+    "expensas": 0,
+    "total": 700,
+    "rooms": 4,
+    "m2": 0,
+    "location": "Elpidio González 2800",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17397720",
+    "id": "17397720",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -1200,18 +1224,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 800000,
-    "expensas": 0,
-    "total": 800000,
-    "rooms": 3,
-    "m2": 67,
-    "location": "Av Alvarez Thomas 3400, Piso PB",
-    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-urquiza-4-ambientes--6110187",
-    "id": "6110187",
-    "title": "PH en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 1400000320000,
     "expensas": 320000,
     "total": 1400000640000,
@@ -1221,6 +1233,78 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--17372968",
     "id": "17372968",
     "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 750000,
+    "expensas": 0,
+    "total": 750000,
+    "rooms": 2,
+    "m2": 55,
+    "location": "Av San Martin 6900",
+    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-devoto-3-ambientes--17391685",
+    "id": "17391685",
+    "title": "PH en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1100000130000,
+    "expensas": 130000,
+    "total": 1100000260000,
+    "rooms": 4,
+    "m2": 65,
+    "location": "DONADO 2200, Piso 6",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-4-ambientes--17394898",
+    "id": "17394898",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 550000122000,
+    "expensas": 122000,
+    "total": 550000244000,
+    "rooms": 2,
+    "m2": 58,
+    "location": "Melincue al 3200",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-3-ambientes--17395185",
+    "id": "17395185",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 750000171130,
+    "expensas": 171130,
+    "total": 750000342260,
+    "rooms": 2,
+    "m2": 60,
+    "location": "Av. Monroe al 4400",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17396367",
+    "id": "17396367",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 950000180000,
+    "expensas": 180000,
+    "total": 950000360000,
+    "rooms": 2,
+    "m2": 55,
+    "location": "Miller al 2900",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17396621",
+    "id": "17396621",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 950000180000,
+    "expensas": 180000,
+    "total": 950000360000,
+    "rooms": 2,
+    "m2": 55,
+    "location": "Miller al 2900",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17396623",
+    "id": "17396623",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -1560,18 +1644,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 90000060000,
-    "expensas": 60000,
-    "total": 90000120000,
-    "rooms": 2,
-    "m2": 70,
-    "location": "Avenida Francisco Beiró 5500",
-    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-devoto-3-ambientes--17292798",
-    "id": "17292798",
-    "title": "PH en Alquiler en Villa Devoto, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 1900440000,
     "expensas": 440000,
     "total": 1900880000,
@@ -1680,39 +1752,15 @@
     "source": "ArgenProp"
   },
   {
-    "price": 1000000130000,
+    "price": 900000130000,
     "expensas": 130000,
-    "total": 1000000260000,
+    "total": 900000260000,
     "rooms": 3,
     "m2": 7197,
     "location": "Joaquín V. González 3800",
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--17326342",
     "id": "17326342",
     "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 800200000,
-    "expensas": 200000,
-    "total": 800400000,
-    "rooms": 2,
-    "m2": 50,
-    "location": "Blanco Encalada 4700",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17328832",
-    "id": "17328832",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 1130000350000,
-    "expensas": 350000,
-    "total": 1130000700000,
-    "rooms": 2,
-    "m2": 77,
-    "location": "Juramento 5100",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17334517",
-    "id": "17334517",
-    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -1740,18 +1788,6 @@
     "source": "ArgenProp"
   },
   {
-    "price": 900000,
-    "expensas": 0,
-    "total": 900000,
-    "rooms": 2,
-    "m2": 6059,
-    "location": "Coronel Ramón Lista 5100",
-    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-devoto-3-ambientes--17344588",
-    "id": "17344588",
-    "title": "PH en Alquiler en Villa Devoto, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
     "price": 1200230000,
     "expensas": 230000,
     "total": 1200460000,
@@ -1776,27 +1812,15 @@
     "source": "ArgenProp"
   },
   {
-    "price": 700000,
-    "expensas": 0,
-    "total": 700000,
+    "price": 70000085000,
+    "expensas": 85000,
+    "total": 70000170000,
     "rooms": 2,
     "m2": 50,
     "location": "Aizpurua al 3300",
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17352323",
     "id": "17352323",
     "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
-    "source": "ArgenProp"
-  },
-  {
-    "price": 950000180000,
-    "expensas": 180000,
-    "total": 950000360000,
-    "rooms": 2,
-    "m2": 67,
-    "location": "Asunción al 3200",
-    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17354538",
-    "id": "17354538",
-    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
     "source": "ArgenProp"
   },
   {
@@ -1917,6 +1941,318 @@
     "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17376521",
     "id": "17376521",
     "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 80000095000,
+    "expensas": 95000,
+    "total": 80000190000,
+    "rooms": 2,
+    "m2": 4884,
+    "location": "Cullen 4900",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17390619",
+    "id": "17390619",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1900,
+    "expensas": 0,
+    "total": 1900,
+    "rooms": 3,
+    "m2": 123,
+    "location": "Fernández de Enciso al 3700",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--17391264",
+    "id": "17391264",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 800165000,
+    "expensas": 165000,
+    "total": 800330000,
+    "rooms": 2,
+    "m2": 6689,
+    "location": "Avenida de los Constituyentes 5500",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17391367",
+    "id": "17391367",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 650000,
+    "expensas": 0,
+    "total": 650000,
+    "rooms": 2,
+    "m2": 69,
+    "location": "DESAGUADERO 3700 100, Piso 2",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17391577",
+    "id": "17391577",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 82000030000,
+    "expensas": 30000,
+    "total": 82000060000,
+    "rooms": 2,
+    "m2": 52,
+    "location": "ACHA MARIANO 3300, Piso 2",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17392473",
+    "id": "17392473",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1400000127000,
+    "expensas": 127000,
+    "total": 1400000254000,
+    "rooms": 2,
+    "m2": 7546,
+    "location": "Miller 3200",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17392510",
+    "id": "17392510",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 45000065000,
+    "expensas": 65000,
+    "total": 45000130000,
+    "rooms": 2,
+    "m2": 0,
+    "location": "Bolivia 2200, Piso PA",
+    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-del-parque-3-ambientes--17392511",
+    "id": "17392511",
+    "title": "PH en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 70000065000,
+    "expensas": 65000,
+    "total": 70000130000,
+    "rooms": 2,
+    "m2": 60,
+    "location": "Gualeguaychu 3100, Piso 3",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17394013",
+    "id": "17394013",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 630000185000,
+    "expensas": 185000,
+    "total": 630000370000,
+    "rooms": 2,
+    "m2": 50,
+    "location": "HABANA al 3600",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17395710",
+    "id": "17395710",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 67000096500,
+    "expensas": 96500,
+    "total": 67000193000,
+    "rooms": 2,
+    "m2": 56,
+    "location": "Griveo 2700, Piso 7",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17395964",
+    "id": "17395964",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 850000127500,
+    "expensas": 127500,
+    "total": 850000255000,
+    "rooms": 2,
+    "m2": 60,
+    "location": "Pacheco al 2800",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17396879",
+    "id": "17396879",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1600000205200,
+    "expensas": 205200,
+    "total": 1600000410400,
+    "rooms": 3,
+    "m2": 73,
+    "location": "Triunvirato al 5600",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-4-ambientes--17397455",
+    "id": "17397455",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 720000,
+    "expensas": 0,
+    "total": 720000,
+    "rooms": 2,
+    "m2": 73,
+    "location": "Gabriela Mistral 3100",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17376486",
+    "id": "17376486",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1500510000,
+    "expensas": 510000,
+    "total": 1501020000,
+    "rooms": 3,
+    "m2": 144,
+    "location": "Beiro 3300",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-del-parque-4-ambientes--17376521",
+    "id": "17376521",
+    "title": "Departamento en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 80000095000,
+    "expensas": 95000,
+    "total": 80000190000,
+    "rooms": 2,
+    "m2": 4884,
+    "location": "Cullen 4900",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17390619",
+    "id": "17390619",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1900,
+    "expensas": 0,
+    "total": 1900,
+    "rooms": 3,
+    "m2": 123,
+    "location": "Fernández de Enciso al 3700",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-4-ambientes--17391264",
+    "id": "17391264",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 800165000,
+    "expensas": 165000,
+    "total": 800330000,
+    "rooms": 2,
+    "m2": 6689,
+    "location": "Avenida de los Constituyentes 5500",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17391367",
+    "id": "17391367",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 650000,
+    "expensas": 0,
+    "total": 650000,
+    "rooms": 2,
+    "m2": 69,
+    "location": "DESAGUADERO 3700 100, Piso 2",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17391577",
+    "id": "17391577",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 82000030000,
+    "expensas": 30000,
+    "total": 82000060000,
+    "rooms": 2,
+    "m2": 52,
+    "location": "ACHA MARIANO 3300, Piso 2",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17392473",
+    "id": "17392473",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1400000127000,
+    "expensas": 127000,
+    "total": 1400000254000,
+    "rooms": 2,
+    "m2": 7546,
+    "location": "Miller 3200",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17392510",
+    "id": "17392510",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 45000065000,
+    "expensas": 65000,
+    "total": 45000130000,
+    "rooms": 2,
+    "m2": 0,
+    "location": "Bolivia 2200, Piso PA",
+    "permalink": "https://www.argenprop.com/ph-en-alquiler-en-villa-del-parque-3-ambientes--17392511",
+    "id": "17392511",
+    "title": "PH en Alquiler en Villa del Parque, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 70000065000,
+    "expensas": 65000,
+    "total": 70000130000,
+    "rooms": 2,
+    "m2": 60,
+    "location": "Gualeguaychu 3100, Piso 3",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17394013",
+    "id": "17394013",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 630000185000,
+    "expensas": 185000,
+    "total": 630000370000,
+    "rooms": 2,
+    "m2": 50,
+    "location": "HABANA al 3600",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-devoto-3-ambientes--17395710",
+    "id": "17395710",
+    "title": "Departamento en Alquiler en Villa Devoto, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 67000096500,
+    "expensas": 96500,
+    "total": 67000193000,
+    "rooms": 2,
+    "m2": 56,
+    "location": "Griveo 2700, Piso 7",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-pueyrredon-3-ambientes--17395964",
+    "id": "17395964",
+    "title": "Departamento en Alquiler en Villa Pueyrredon, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 850000127500,
+    "expensas": 127500,
+    "total": 850000255000,
+    "rooms": 2,
+    "m2": 60,
+    "location": "Pacheco al 2800",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-3-ambientes--17396879",
+    "id": "17396879",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
+    "source": "ArgenProp"
+  },
+  {
+    "price": 1600000205200,
+    "expensas": 205200,
+    "total": 1600000410400,
+    "rooms": 3,
+    "m2": 73,
+    "location": "Triunvirato al 5600",
+    "permalink": "https://www.argenprop.com/departamento-en-alquiler-en-villa-urquiza-4-ambientes--17397455",
+    "id": "17397455",
+    "title": "Departamento en Alquiler en Villa Urquiza, Capital Federal",
     "source": "ArgenProp"
   }
 ]
